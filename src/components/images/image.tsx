@@ -1,9 +1,8 @@
 import React from 'react'
-import imageprop from './imageprop'
 
-function image(props: imageprop) {
+export interface ImageProps { description: string; filelocation: string; }
+
+export function Image(props: ImageProps) {
     return(
     <img alt={props.description} src={props.filelocation}></img>)
 }
-
-export default image

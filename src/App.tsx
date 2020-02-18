@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Image } from './components/images/image'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Image description="random image" filelocation="https://source.unsplash.com/random/400x200" />
     </div>
   );
 }
