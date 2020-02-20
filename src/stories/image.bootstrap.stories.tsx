@@ -9,10 +9,10 @@ export default {
     component: Image,
   };
 
-export const imageboostrap = () => (<Container>
+export const image = () => (<Container>
     <Row>
         <Col>
-            <Image alt="some random man" src="https://source.unsplash.com/random/400x400" roundedCircle />
+            <Image alt="some random man" src="https://source.unsplash.com/random/400x400" />
         </Col>
     </Row>
 </Container>);
