@@ -6,4 +6,4 @@ export default {
     component: AboutMe,
   }; 
 
-  export const aboutMeComponent = () => <AboutMe firstName="Consequat" lastName="Officia" dateOfBirth="1985.07.15" />
+  export const aboutMeComponent = () => <AboutMe firstName="Consequat" lastName="Officia" dateOfBirth="1985.07.15" email="random@contoso.com" linkedInProfile="random url" />
