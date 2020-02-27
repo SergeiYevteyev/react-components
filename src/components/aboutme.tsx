@@ -18,7 +18,7 @@ function AboutMe(props: AboutMeProps) {
     return (
         <Col>
         <Row>
-            <Col>{fullName(props)}</Col>
+            <Col><span><strong>{fullName(props)}</strong></span></Col>
         </Row>
         <Row>            
             <Col>{props.dateOfBirth}</Col>
