@@ -3,8 +3,8 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 
 export interface AboutMeProps {
-    linkedInProfile: ReactNode
-    email: ReactNode
+    linkedInProfile: string
+    email: string
     dateOfBirth: string
     firstName: string
     lastName: string    
