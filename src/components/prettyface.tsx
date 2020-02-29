@@ -10,4 +10,11 @@ function PrettyFace(props: PrettyFaceProps) {
     return <Image alt={props.description} src={props.imageUrl} roundedCircle />
 }
 
+export function createInstance(description: string, imageUrl: string) : PrettyFaceProps {
+    return {
+        description: description,
+        imageUrl: imageUrl
+    }
+}
+
 export default PrettyFace

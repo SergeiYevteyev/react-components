@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Image from 'react-bootstrap/Image'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import Landing from './components/landing';
+import * as apiGet from './api/get';
+import * as pf from './components/prettyface';
+import * as am from './components/aboutme';
 
 function App() {
-  return (
-    <Container>
-    <Row>
-      <Col xs={8}>
+  const [prettyFace, setPrettyFace] = useState(pf.createInstance('',''))
 
-      </Col>
-        <Col xs={4}>
-            <Image alt="some random image" src="https://source.unsplash.com/random/200x200" roundedCircle />
-        </Col>
-    </Row>
-</Container>
+  useEffect(
+    function fetchData() {
+    apiGet.getPrettyFace()
+    .then((value: apiGet.prettyFaceResult) => {
+    setPrettyFace(pf.createInstance('',value.url))
+    })
+    .catch((reason: any) => {console.log(reason)});
+    }, [])
+
+  const [aboutMe, setAboutMe] = useState(am.createInstance('','', '', '', ''))
+
+  useEffect(
+    function fetchData() {
+    apiGet.getAboutMe()
+    .then((value: apiGet.aboutMeResult) => {
+    setAboutMe(am.createInstance(value.dateOfBirth, value.email, value.firstName, value.linkedInProfile, value.lastName))
+    })
+    .catch((reason: any) => {console.log(reason)});
+    }, [])
+  
+  return (
+    <Landing prettyFace = {prettyFace} aboutMe = {aboutMe} />
   );
 }
 
