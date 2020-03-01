@@ -7,7 +7,7 @@ export interface PrettyFaceProps {
 }
 
 function PrettyFace(props: PrettyFaceProps) {
-    return <Image alt={props.description} src={props.imageUrl} roundedCircle />
+    return <Image alt={props.description} src={props.imageUrl} roundedCircle className="img-fluid" />
 }
 
 export function createInstance(description: string, imageUrl: string) : PrettyFaceProps {
