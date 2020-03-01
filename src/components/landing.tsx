@@ -37,10 +37,10 @@ function Landing(props: LandingInterface) {
                 </Col>
             </Row>
             <Row>
-                <Col xs={8}>
+                <Col xs={12} sm={8}>
                     <Chapter header={props.motto.chapter.header} text={props.motto.chapter.text} />
                 </Col>
-                <Col xs={4}>
+                <Col xs={12} sm={4}>
                     <WordCloud imageUrl={props.motto.techStack} description='' />
                 </Col>
             </Row>
