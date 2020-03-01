@@ -49,3 +49,28 @@ export function getAboutMe() : Promise<aboutMeResult> {
       })
     }); 
 }
+
+export interface mottoResult {
+  header: string,
+  text: string,
+  techStack: string
+}
+
+export function getMotto() : Promise<mottoResult> {
+  return new Promise<mottoResult>((resolve, reject) => {
+      axios.get('motto.json')
+    .then(function (response) {
+      // handle success        
+      return resolve({
+          header: response.data.header,
+          techStack: response.data.techstack,
+          text: response.data.text
+      })
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+      return reject(error)
+    })
+  }); 
+}

@@ -7,7 +7,7 @@ export interface WordCloudProps {
 }
 
 function WordCloud(props: WordCloudProps) {
-    return <Image alt={props.description} src={props.imageUrl} roundedCircle />
+    return <Image alt={props.description} src={props.imageUrl} className="img-fluid" />
 }
 
 export default WordCloud

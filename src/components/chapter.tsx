@@ -2,7 +2,14 @@ import React from 'react'
 
 export interface ChapterProps {
     header: string
-    text: string
+    text: string    
+}
+
+export function createChapter(header: string, text: string) : ChapterProps{
+    return {
+        header: header,
+        text: text     
+    }
 }
 
 function Chapter(props: ChapterProps) {
