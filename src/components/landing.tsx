@@ -6,11 +6,14 @@ import AboutMe, { AboutMeProps } from './aboutme'
 import PrettyFace, { PrettyFaceProps } from './prettyface'
 import Chapter, { ChapterProps } from './chapter'
 import WordCloud from './wordcloud'
+import LineBreak from './linebreak'
+import Chapters, { ChaptersProps } from './chapters'
 
 export interface LandingInterface {
     aboutMe: AboutMeProps
     prettyFace: PrettyFaceProps
     motto: Motto
+    experience: ChapterProps[]
 }
 
 export interface Motto {
@@ -42,6 +45,16 @@ function Landing(props: LandingInterface) {
                 </Col>
                 <Col xs={12} sm={4}>
                     <WordCloud imageUrl={props.motto.techStack} description='' />
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <LineBreak />
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <Chapters Chapter={props.experience} />
                 </Col>
             </Row>
         </Container>

@@ -6,6 +6,7 @@ import * as apiGet from './api/get';
 import * as pf from './components/prettyface';
 import * as am from './components/aboutme';
 import * as ch from './components/chapter';
+import { buildChapters } from './components/chapters';
 
 function App() {
   const [prettyFace, setPrettyFace] = useState(pf.createInstance('',''))
@@ -40,9 +41,20 @@ function App() {
       })
       .catch((reason: any) => {console.log(reason)});
       }, [])
+
+      const [experience, setExperience] = useState(buildChapters().Build())
+
+    useEffect(
+      function fetchData() {
+      apiGet.getExperience()
+      .then((value: apiGet.experienceResult) => {
+      setExperience(createMotto(ch.createChapter(value.header, value.text), value.techStack))
+      })
+      .catch((reason: any) => {console.log(reason)});
+      }, [])
   
   return (
-    <Landing prettyFace = {prettyFace} aboutMe = {aboutMe} motto = {motto} />
+    <Landing prettyFace = {prettyFace} aboutMe = {aboutMe} motto = {motto} experience={experience} />
   );
 }
 
