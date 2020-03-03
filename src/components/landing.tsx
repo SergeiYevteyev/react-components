@@ -8,12 +8,13 @@ import Chapter, { ChapterProps } from './chapter'
 import WordCloud from './wordcloud'
 import LineBreak from './linebreak'
 import Chapters, { ChaptersProps } from './chapters'
+import WorkExperience, { workExperienceProps } from './workexperience'
 
 export interface LandingInterface {
     aboutMe: AboutMeProps
     prettyFace: PrettyFaceProps
     motto: Motto
-    experience: ChapterProps[]
+    experience: workExperienceProps
 }
 
 export interface Motto {
@@ -54,7 +55,7 @@ function Landing(props: LandingInterface) {
             </Row>
             <Row>
                 <Col>
-                    <Chapters Chapter={props.experience} />
+                    <WorkExperience items={props.experience.items} />
                 </Col>
             </Row>
         </Container>
