@@ -74,3 +74,40 @@ export function getMotto() : Promise<mottoResult> {
     })
   }); 
 }
+
+export interface experienceResult {
+  items: experienceItem[]
+}
+
+interface experienceItem {
+  position: string,
+  where: string,
+  techStack: string,
+  shortStory: string
+}
+
+export function getExperience() : Promise<experienceResult> {
+  return new Promise<experienceResult>((resolve, reject) => {
+      axios.get('experience.json')
+    .then(function (response) {
+      var result: experienceResult
+      result = {items:[]}
+      for(var i = 0; i < response.data.length; ++i) {
+        result.items.push({
+          position: response.data.position,
+          where: response.data.where,
+          techStack: response.data.techStack,
+          shortStory: response.data.shortStory,
+        })
+      }
+
+      // handle success        
+      return resolve(result)
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+      return reject(error)
+    })
+  }); 
+}
