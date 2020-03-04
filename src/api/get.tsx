@@ -80,6 +80,7 @@ export interface experienceResult {
 }
 
 interface experienceItem {
+  id: string,
   position: string,
   where: string,
   techStack: string,
@@ -91,13 +92,14 @@ export function getExperience() : Promise<experienceResult> {
       axios.get('experience.json')
     .then(function (response) {
       var result: experienceResult
-      result = {items:[]}
+      result = {items:[]}      
       for(var i = 0; i < response.data.length; ++i) {
         result.items.push({
-          position: response.data.position,
-          where: response.data.where,
-          techStack: response.data.techStack,
-          shortStory: response.data.shortStory,
+          id: response.data[i].id,
+          position: response.data[i].position,
+          where: response.data[i].where,
+          techStack: response.data[i].techStack,
+          shortStory: response.data[i].shortStory,
         })
       }
 

@@ -1,10 +1,12 @@
 import React from 'react'
+import '../style/workexperience.scss'
 
 export interface workExperienceProps {
     items: workExperience[]
 }
 
 interface workExperience {
+    id: string,
     position: string,
     where: string,
     techStack: string,
@@ -12,11 +14,13 @@ interface workExperience {
 }
 
 export function createWorkExperience(
+    id: string,
     position: string,
     where: string,
     techStack: string,
     shortStory: string) : workExperience {
         return {
+            id: id,
             position: position,
             shortStory: shortStory,
             techStack: techStack,
@@ -67,7 +71,7 @@ function renderWorkExperienceSection(items: workExperience[]) {
 
 function renderWorkExperience(workExperience: workExperience) {
     return (
-        <div>
+        <div className="wrap-new-line" key={workExperience.id}>
             <h3>{workExperience.position}</h3>
             <h4>{workExperience.where}</h4>
             <h5>{workExperience.techStack}</h5>

@@ -6,7 +6,6 @@ import * as apiGet from './api/get';
 import * as pf from './components/prettyface';
 import * as am from './components/aboutme';
 import * as ch from './components/chapter';
-import { buildChapters } from './components/chapters';
 import * as we from './components/workexperience';
 
 function App() {
@@ -53,7 +52,7 @@ function App() {
         
         for(;value.items.length > 0;) {
           var item = value.items.pop();
-          builder.Add(we.createWorkExperience(item!.position, item!.where, item!.techStack, item!.shortStory));
+          builder.Add(we.createWorkExperience(item!.id, item!.position, item!.where, item!.techStack, item!.shortStory));
         }
 
       setExperience(builder.Build())

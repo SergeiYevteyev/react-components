@@ -7,7 +7,6 @@ import PrettyFace, { PrettyFaceProps } from './prettyface'
 import Chapter, { ChapterProps } from './chapter'
 import WordCloud from './wordcloud'
 import LineBreak from './linebreak'
-import Chapters, { ChaptersProps } from './chapters'
 import WorkExperience, { workExperienceProps } from './workexperience'
 
 export interface LandingInterface {
@@ -30,6 +29,7 @@ export function createMotto(chapter: ChapterProps, techStack: string) : Motto {
 }
 
 function Landing(props: LandingInterface) {
+    const workexperience = renderWorkExperience(props.experience)
     return (
         <Container>
             <Row>
@@ -53,12 +53,22 @@ function Landing(props: LandingInterface) {
                     <LineBreak />
                 </Col>
             </Row>
-            <Row>
-                <Col>
-                    <WorkExperience items={props.experience.items} />
-                </Col>
-            </Row>
+            {workexperience}                        
         </Container>
+    )
+}
+
+function renderWorkExperience(workexperience: workExperienceProps) {
+    if (workexperience.items.length == 0) {
+        return null
+    }
+
+    return (
+        <Row>
+            <Col>
+                <WorkExperience items={workexperience.items} />
+            </Col>
+        </Row>
     )
 }
 
