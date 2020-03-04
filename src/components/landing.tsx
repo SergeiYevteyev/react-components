@@ -59,7 +59,7 @@ function Landing(props: LandingInterface) {
 }
 
 function renderWorkExperience(workexperience: workExperienceProps) {
-    if (workexperience.items.length == 0) {
+    if (workexperience.items.length === 0) {
         return null
     }
 
