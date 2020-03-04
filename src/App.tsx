@@ -7,6 +7,7 @@ import * as pf from './components/prettyface';
 import * as am from './components/aboutme';
 import * as ch from './components/chapter';
 import { buildChapters } from './components/chapters';
+import * as we from './components/workexperience';
 
 function App() {
   const [prettyFace, setPrettyFace] = useState(pf.createInstance('',''))
@@ -42,13 +43,20 @@ function App() {
       .catch((reason: any) => {console.log(reason)});
       }, [])
 
-      const [experience, setExperience] = useState(buildChapters().Build())
+      const [experience, setExperience] = useState(we.createBuilder().Build())
 
     useEffect(
       function fetchData() {
       apiGet.getExperience()
       .then((value: apiGet.experienceResult) => {
-      setExperience(createMotto(ch.createChapter(value.header, value.text), value.techStack))
+        var builder = we.createBuilder()
+        
+        for(;value.items.length > 0;) {
+          var item = value.items.pop();
+          builder.Add(we.createWorkExperience(item!.position, item!.where, item!.techStack, item!.shortStory));
+        }
+
+      setExperience(builder.Build())
       })
       .catch((reason: any) => {console.log(reason)});
       }, [])
