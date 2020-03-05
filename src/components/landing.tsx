@@ -32,14 +32,7 @@ function Landing(props: LandingInterface) {
     const workexperience = renderWorkExperience(props.experience)
     return (
         <Container>
-            <Row>
-                <Col xs={8}>
-                <AboutMe dateOfBirth={props.aboutMe.dateOfBirth} email={props.aboutMe.email} firstName={props.aboutMe.firstName} lastName={props.aboutMe.lastName} linkedInProfile={props.aboutMe.linkedInProfile} />
-                </Col>
-                <Col xs={4}>
-                    <PrettyFace description={props.prettyFace.description} imageUrl={props.prettyFace.imageUrl} />
-                </Col>
-            </Row>
+            {renderAboutMe(props.aboutMe, props.prettyFace)}
             <Row>
                 <Col xs={12} sm={8}>
                     <Chapter header={props.motto.chapter.header} text={props.motto.chapter.text} />
@@ -55,6 +48,19 @@ function Landing(props: LandingInterface) {
             </Row>
             {workexperience}                        
         </Container>
+    )
+}
+
+function renderAboutMe(aboutMe: AboutMeProps, prettyFace: PrettyFaceProps) {
+    return (
+        <Row>
+            <Col xs={8}>
+                <AboutMe dateOfBirth={aboutMe.dateOfBirth} email={aboutMe.email} firstName={aboutMe.firstName} lastName={aboutMe.lastName} linkedInProfile={aboutMe.linkedInProfile} />
+            </Col>
+            <Col xs={4}>
+                <PrettyFace description={prettyFace.description} imageUrl={prettyFace.imageUrl} />
+            </Col>
+        </Row>
     )
 }
 
