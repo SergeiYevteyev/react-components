@@ -35,7 +35,7 @@ function Landing(props: LandingInterface) {
             {renderAboutMe(props.aboutMe, props.prettyFace)}
             {renderMotto(props.motto)}
             {renderLineBreak()}
-            {workexperience}   
+            {renderWorkExperience(props.experience)}
             {renderLineBreak()}                     
         </Container>
     )
