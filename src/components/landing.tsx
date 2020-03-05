@@ -8,12 +8,14 @@ import Chapter, { ChapterProps } from './chapter'
 import WordCloud from './wordcloud'
 import LineBreak from './linebreak'
 import WorkExperience, { workExperienceProps } from './workexperience'
+import Education, { educationProps } from './education'
 
 export interface LandingInterface {
     aboutMe: AboutMeProps
     prettyFace: PrettyFaceProps
     motto: Motto
     experience: workExperienceProps
+    education: educationProps
 }
 
 export interface Motto {
@@ -36,7 +38,8 @@ function Landing(props: LandingInterface) {
             {renderMotto(props.motto)}
             {renderLineBreak()}
             {renderWorkExperience(props.experience)}
-            {renderLineBreak()}                     
+            {renderLineBreak()}   
+            {renderEducation(props.education)}                  
         </Container>
     )
 }
@@ -84,6 +87,20 @@ function renderLineBreak() {
         <Row>
             <Col>
                 <LineBreak />
+            </Col>
+        </Row>
+    )
+}
+
+function renderEducation(education: educationProps) {
+    if (education.items.length === 0) {
+        return null
+    }
+
+    return (
+        <Row>
+            <Col>
+                <Education items={education.items} />
             </Col>
         </Row>
     )
