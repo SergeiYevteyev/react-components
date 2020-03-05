@@ -1,5 +1,7 @@
 import React from 'react'
 import '../style/workexperience.scss'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export interface workExperienceProps {
     items: workExperience[]
@@ -71,10 +73,20 @@ function renderWorkExperienceSection(items: workExperience[]) {
 function renderWorkExperience(workExperience: workExperience) {
     return (
         <div className="wrap-new-line component" key={workExperience.id}>
-            <h3>{workExperience.position}</h3>
-            <h4>{workExperience.where}</h4>
-            <h5>{workExperience.techStack}</h5>
-            <span>{workExperience.shortStory}</span>
+            <Row>
+                <Col>
+                    <h3>{workExperience.position}</h3>
+                </Col>
+            </Row>
+            <Row>
+                <Col xs={10}>
+                    <h4>{workExperience.where}</h4>            
+                    <span>{workExperience.shortStory}</span>
+                </Col>
+                <Col xs={2}>
+                    <h6>{workExperience.techStack}</h6>
+                </Col>
+            </Row>
         </div>
     )
 }
