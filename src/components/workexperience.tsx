@@ -70,7 +70,7 @@ function renderWorkExperienceSection(items: workExperience[]) {
 
 function renderWorkExperience(workExperience: workExperience) {
     return (
-        <div className="wrap-new-line" key={workExperience.id}>
+        <div className="wrap-new-line component" key={workExperience.id}>
             <h3>{workExperience.position}</h3>
             <h4>{workExperience.where}</h4>
             <h5>{workExperience.techStack}</h5>
