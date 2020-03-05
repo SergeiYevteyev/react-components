@@ -8,13 +8,13 @@ export default {
 
 function retrieveEducation() : we.educationProps{
     var builder = we.createBuilder()
-    builder.Add(we.createeducation(
+    builder.Add(we.createEducation(
         'ed1',
         'Rigas Tehniska Universitate',
         'Bachelor\'s degree, automation and computer engineering - computer control systems',
         '2008-2010'))
 
-    builder.Add(we.createeducation(
+    builder.Add(we.createEducation(
             'ed2',
             'Rigas Tehniska Universitate',
             'Master\'s degree, automation and computer engineering - computer control systems',

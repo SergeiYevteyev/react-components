@@ -12,7 +12,7 @@ interface education {
     yearsofstudy: string
 }
 
-export function createeducation(
+export function createEducation(
     id: string,    
     where: string,
     degree: string,

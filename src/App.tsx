@@ -7,6 +7,7 @@ import * as pf from './components/prettyface';
 import * as am from './components/aboutme';
 import * as ch from './components/chapter';
 import * as we from './components/workexperience';
+import * as ed from './components/education';
 
 function App() {
   const [prettyFace, setPrettyFace] = useState(pf.createInstance('',''))
@@ -42,7 +43,7 @@ function App() {
       .catch((reason: any) => {console.log(reason)});
       }, [])
 
-      const [experience, setExperience] = useState(we.createBuilder().Build())
+    const [experience, setExperience] = useState(we.createBuilder().Build())
 
     useEffect(
       function fetchData() {
@@ -59,9 +60,27 @@ function App() {
       })
       .catch((reason: any) => {console.log(reason)});
       }, [])
+
+      const [education, setEducation] = useState(ed.createBuilder().Build())
+
+    useEffect(
+      function fetchData() {
+      apiGet.getEducation()
+      .then((value: apiGet.educationResult) => {
+        var builder = ed.createBuilder()
+        
+        for(;value.items.length > 0;) {
+          var item = value.items.pop();
+          builder.Add(ed.createEducation(item!.id, item!.where, item!.degree, item!.yearsofstudy));
+        }
+
+      setEducation(builder.Build())
+      })
+      .catch((reason: any) => {console.log(reason)});
+      }, [])
   
   return (
-    <Landing prettyFace = {prettyFace} aboutMe = {aboutMe} motto = {motto} experience={experience} />
+    <Landing prettyFace = {prettyFace} aboutMe = {aboutMe} motto = {motto} experience={experience} education={education} />
   );
 }
 
