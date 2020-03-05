@@ -67,9 +67,9 @@ function rendereducationSection(items: education[]) {
 
 function rendereducation(education: education) {
     return (
-        <div className="wrap-new-line" key={education.id}>
-            <h3>{education.where}</h3>
-            <h4>{education.degree}</h4>
+        <div className="wrap-new-line component" key={education.id}>
+            <h5>{education.where}</h5>
+            <h6>{education.degree}</h6>
             <span>{education.yearsofstudy}</span>
         </div>
     )
