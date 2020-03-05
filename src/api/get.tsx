@@ -6,7 +6,7 @@ export interface prettyFaceResult {
 
 export function getPrettyFace() : Promise<prettyFaceResult> {
     return new Promise<prettyFaceResult>((resolve, reject) => {
-    axios.get('prettyface.json')
+    axios.get('/api/prettyface.json')
   .then(function (response) {
     // handle success    
     return resolve({
@@ -31,7 +31,7 @@ export interface aboutMeResult {
 
 export function getAboutMe() : Promise<aboutMeResult> {
     return new Promise<aboutMeResult>((resolve, reject) => {
-        axios.get('aboutme.json')
+        axios.get('/api/aboutme.json')
       .then(function (response) {
         // handle success        
         return resolve({
@@ -58,7 +58,7 @@ export interface mottoResult {
 
 export function getMotto() : Promise<mottoResult> {
   return new Promise<mottoResult>((resolve, reject) => {
-      axios.get('motto.json')
+      axios.get('/api/motto.json')
     .then(function (response) {
       // handle success        
       return resolve({
@@ -89,7 +89,7 @@ interface experienceItem {
 
 export function getExperience() : Promise<experienceResult> {
   return new Promise<experienceResult>((resolve, reject) => {
-      axios.get('experience.json')
+      axios.get('/api/experience.json')
     .then(function (response) {
       var result: experienceResult
       result = {items:[]}      
@@ -127,7 +127,7 @@ interface educationItem {
 
 export function getEducation() : Promise<educationResult> {
   return new Promise<educationResult>((resolve, reject) => {
-      axios.get('education.json')
+      axios.get('/api/education.json')
     .then(function (response) {
       var result: educationResult
       result = {items:[]}      
