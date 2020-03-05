@@ -53,7 +53,7 @@ function App() {
         
         for(;value.items.length > 0;) {
           var item = value.items.pop();
-          builder.Add(we.createWorkExperience(item!.id, item!.position, item!.where, item!.techStack, item!.shortStory));
+          builder.Add(we.createWorkExperience(item!.id, item!.position, item!.where, item!.techStack, item!.shortStory, item!.yearsworked));
         }
 
       setExperience(builder.Build())

@@ -12,7 +12,8 @@ interface workExperience {
     position: string,
     where: string,
     techStack: string,
-    shortStory: string
+    shortStory: string,
+    yearsworked: string
 }
 
 export function createWorkExperience(
@@ -20,13 +21,15 @@ export function createWorkExperience(
     position: string,
     where: string,
     techStack: string,
-    shortStory: string) : workExperience {
+    shortStory: string,
+    yearsworked: string) : workExperience {
         return {
             id: id,
             position: position,
             shortStory: shortStory,
             techStack: techStack,
-            where: where
+            where: where,
+            yearsworked: yearsworked
         }
     }
 
@@ -80,8 +83,21 @@ function renderWorkExperience(workExperience: workExperience) {
             </Row>
             <Row>
                 <Col xs={10}>
-                    <h4>{workExperience.where}</h4>            
-                    <span>{workExperience.shortStory}</span>
+                    <Row>
+                        <Col>
+                            <h5>{workExperience.where}</h5>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <span>{workExperience.yearsworked}</span>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <span>{workExperience.shortStory}</span>
+                        </Col>
+                    </Row>
                 </Col>
                 <Col xs={2}>
                     <h6>{workExperience.techStack}</h6>

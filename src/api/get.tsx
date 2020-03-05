@@ -84,7 +84,8 @@ interface experienceItem {
   position: string,
   where: string,
   techStack: string,
-  shortStory: string
+  shortStory: string,
+  yearsworked: string
 }
 
 export function getExperience() : Promise<experienceResult> {
@@ -100,6 +101,7 @@ export function getExperience() : Promise<experienceResult> {
           where: response.data[i].where,
           techStack: response.data[i].techStack,
           shortStory: response.data[i].shortStory,
+          yearsworked: response.data[i].yearsworked,          
         })
       }
 

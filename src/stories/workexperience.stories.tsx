@@ -17,7 +17,8 @@ function retrieveWorkExperience() : we.workExperienceProps{
 
 Duis cupidatat ad commodo aliqua aliquip sint occaecat proident dolor tempor officia exercitation deserunt. Magna est ullamco laboris aliquip ad aliquip sunt pariatur pariatur pariatur. Magna in anim sint velit elit esse non Lorem quis enim fugiat officia. Mollit elit ex enim ullamco. Lorem magna proident et laborum duis aliquip commodo proident aliquip Lorem officia.
 
-Ullamco occaecat et exercitation ad in. Ipsum incididunt proident aute dolor et consectetur. Consequat in magna do est ea esse incididunt fugiat quis elit elit ut sit.`
+Ullamco occaecat et exercitation ad in. Ipsum incididunt proident aute dolor et consectetur. Consequat in magna do est ea esse incididunt fugiat quis elit elit ut sit.`,
+'2001 - 2010'
     ))
 
     builder.Add(we.createWorkExperience(
@@ -29,7 +30,8 @@ Ullamco occaecat et exercitation ad in. Ipsum incididunt proident aute dolor et 
 
 Pariatur labore laborum sunt fugiat qui enim. Incididunt non ex do nulla ipsum Lorem. Consectetur est incididunt cupidatat quis occaecat. Do ex duis officia est. Amet ex sunt cupidatat eu adipisicing laboris commodo deserunt nisi in sunt aliqua. Quis nostrud dolor consequat aute. Quis eu id consequat nisi cillum amet commodo excepteur proident nostrud eu.
 
-Velit deserunt id aute labore nulla voluptate amet reprehenderit laborum reprehenderit. Sint fugiat ipsum aliqua laboris. Incididunt aute commodo eiusmod pariatur aliquip officia adipisicing. Lorem eu labore sunt ipsum ut sunt velit ea do mollit eu mollit. Consectetur do quis aliquip aliquip ullamco do mollit incididunt nisi.`
+Velit deserunt id aute labore nulla voluptate amet reprehenderit laborum reprehenderit. Sint fugiat ipsum aliqua laboris. Incididunt aute commodo eiusmod pariatur aliquip officia adipisicing. Lorem eu labore sunt ipsum ut sunt velit ea do mollit eu mollit. Consectetur do quis aliquip aliquip ullamco do mollit incididunt nisi.`,
+'2010 - 2022'
     ))
 
     return builder.Build()
