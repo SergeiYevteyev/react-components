@@ -113,3 +113,40 @@ export function getExperience() : Promise<experienceResult> {
     })
   }); 
 }
+
+export interface educationResult {
+  items: educationItem[]
+}
+
+interface educationItem {
+  id: string,    
+  where: string,
+  degree: string,
+  yearsofstudy: string
+}
+
+export function getEducation() : Promise<educationResult> {
+  return new Promise<educationResult>((resolve, reject) => {
+      axios.get('education.json')
+    .then(function (response) {
+      var result: educationResult
+      result = {items:[]}      
+      for(var i = 0; i < response.data.length; ++i) {
+        result.items.push({
+          id: response.data[i].id,
+          where: response.data[i].where,
+          degree: response.data[i].degree,
+          yearsofstudy: response.data[i].yearsofstudy
+        })
+      }
+
+      // handle success        
+      return resolve(result)
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+      return reject(error)
+    })
+  }); 
+}
