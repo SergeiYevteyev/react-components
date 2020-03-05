@@ -55,8 +55,7 @@ class workExperienceBuilder {
 
 function WorkExperience(props: workExperienceProps) {
     const section = renderWorkExperienceSection(props.items)
-
-return (<div>{section}</div>)
+    return (<div>{section}</div>)
 }
 
 function renderWorkExperienceSection(items: workExperience[]) {
