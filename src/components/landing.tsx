@@ -33,14 +33,7 @@ function Landing(props: LandingInterface) {
     return (
         <Container>
             {renderAboutMe(props.aboutMe, props.prettyFace)}
-            <Row>
-                <Col xs={12} sm={8}>
-                    <Chapter header={props.motto.chapter.header} text={props.motto.chapter.text} />
-                </Col>
-                <Col xs={12} sm={4}>
-                    <WordCloud imageUrl={props.motto.techStack} description='' />
-                </Col>
-            </Row>
+            {renderMotto(props.motto)}
             <Row>
                 <Col>
                     <LineBreak />
@@ -62,6 +55,17 @@ function renderAboutMe(aboutMe: AboutMeProps, prettyFace: PrettyFaceProps) {
             </Col>
         </Row>
     )
+}
+
+function renderMotto(motto: Motto) {
+    return <Row>
+        <Col xs={12} sm={8}>
+            <Chapter header={motto.chapter.header} text={motto.chapter.text} />
+        </Col>
+        <Col xs={12} sm={4}>
+            <WordCloud imageUrl={motto.techStack} description='' />
+        </Col>
+    </Row>
 }
 
 function renderWorkExperience(workexperience: workExperienceProps) {
