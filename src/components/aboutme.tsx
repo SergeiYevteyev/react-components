@@ -19,16 +19,16 @@ function AboutMe(props: AboutMeProps) {
     return (
         <Col>
         <Row>
-            <Col><span><strong>{fullName(props)}</strong></span></Col>
+            <Col><h2><strong>{fullName(props)}</strong></h2></Col>
         </Row>
         <Row>            
             <Col>{props.dateOfBirth}</Col>
         </Row>
         <Row>
-            <Col><a href={"mailto: " + props.email}>{props.email}</a></Col>
+            <Col><h6><a href={"mailto: " + props.email}>{props.email}</a></h6></Col>
         </Row>
         <Row>
-            <Col><a href={props.linkedInProfile} className="text-fits-its-container">{props.linkedInProfile}</a></Col>
+            <Col><h6><a href={props.linkedInProfile} className="text-fits-its-container">{props.linkedInProfile}</a></h6></Col>
         </Row>
         </Col>
     )
