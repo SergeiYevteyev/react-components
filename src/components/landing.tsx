@@ -9,6 +9,7 @@ import WordCloud from './wordcloud'
 import LineBreak from './linebreak'
 import WorkExperience, { workExperienceProps } from './workexperience'
 import Education, { educationProps } from './education'
+import '../style/landing.scss'
 
 export interface LandingInterface {
     aboutMe: AboutMeProps
@@ -34,6 +35,7 @@ function Landing(props: LandingInterface) {
     const workexperience = renderWorkExperience(props.experience)
     return (
         <Container>
+            <Row className="first-row-margin"></Row>
             {renderAboutMe(props.aboutMe, props.prettyFace)}
             {renderMotto(props.motto)}
             {renderLineBreak()}
