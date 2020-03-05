@@ -82,7 +82,7 @@ function renderWorkExperience(workExperience: workExperience) {
                 </Col>
             </Row>
             <Row>
-                <Col xs={10}>
+                <Col xs={9}>
                     <Row>
                         <Col>
                             <h5>{workExperience.where}</h5>
@@ -99,7 +99,7 @@ function renderWorkExperience(workExperience: workExperience) {
                         </Col>
                     </Row>
                 </Col>
-                <Col xs={2}>
+                <Col xs={3}>
                     <h6>{workExperience.techStack}</h6>
                 </Col>
             </Row>
