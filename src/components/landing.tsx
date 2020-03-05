@@ -34,12 +34,9 @@ function Landing(props: LandingInterface) {
         <Container>
             {renderAboutMe(props.aboutMe, props.prettyFace)}
             {renderMotto(props.motto)}
-            <Row>
-                <Col>
-                    <LineBreak />
-                </Col>
-            </Row>
-            {workexperience}                        
+            {renderLineBreak()}
+            {workexperience}   
+            {renderLineBreak()}                     
         </Container>
     )
 }
@@ -77,6 +74,16 @@ function renderWorkExperience(workexperience: workExperienceProps) {
         <Row>
             <Col>
                 <WorkExperience items={workexperience.items} />
+            </Col>
+        </Row>
+    )
+}
+
+function renderLineBreak() {
+    return (
+        <Row>
+            <Col>
+                <LineBreak />
             </Col>
         </Row>
     )
