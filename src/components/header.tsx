@@ -5,7 +5,7 @@ export interface HeaderProps {
 }
 
 function Header(props: HeaderProps) {
-return <h1>{props.description}</h1>
+return <h2>{props.description}</h2>
 }
 
 export default Header

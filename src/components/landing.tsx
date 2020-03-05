@@ -10,6 +10,7 @@ import LineBreak from './linebreak'
 import WorkExperience, { workExperienceProps } from './workexperience'
 import Education, { educationProps } from './education'
 import '../style/landing.scss'
+import Header from './header'
 
 export interface LandingInterface {
     aboutMe: AboutMeProps
@@ -39,9 +40,12 @@ function Landing(props: LandingInterface) {
             {renderAboutMe(props.aboutMe, props.prettyFace)}
             {renderMotto(props.motto)}
             {renderLineBreak()}
+            {renderHeader('Experience')}
             {renderWorkExperience(props.experience)}
             {renderLineBreak()}   
-            {renderEducation(props.education)}                  
+            {renderHeader('Education')}
+            {renderEducation(props.education)}
+            <Row className="first-row-margin"></Row>                
         </Container>
     )
 }
@@ -103,6 +107,16 @@ function renderEducation(education: educationProps) {
         <Row>
             <Col>
                 <Education items={education.items} />
+            </Col>
+        </Row>
+    )
+}
+
+function renderHeader(text: string) {
+    return (
+        <Row>
+            <Col>
+                <Header description={text} />
             </Col>
         </Row>
     )
