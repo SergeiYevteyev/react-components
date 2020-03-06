@@ -33,7 +33,6 @@ export function createMotto(chapter: ChapterProps, techStack: string) : Motto {
 }
 
 function Landing(props: LandingInterface) {
-    const workexperience = renderWorkExperience(props.experience)
     return (
         <Container>
             <Row className="first-row-margin"></Row>
