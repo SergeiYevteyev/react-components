@@ -126,11 +126,18 @@ function renderHeader(text: string) {
 
 function renderSkills(skills: SkillsProps) {
     return (
-        <Row>
-            <Col>
-                <Skills items={skills.items} />
-            </Col>
-        </Row>
+        <Container>
+            <Row>
+                <Col>
+                    <Chapter header="Skills" text="" />
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <Skills items={skills.items} />
+                </Col>
+            </Row>
+        </Container>
     )
 }
 
