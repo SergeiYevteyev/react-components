@@ -11,6 +11,7 @@ import WorkExperience, { workExperienceProps } from './workexperience'
 import Education, { educationProps } from './education'
 import '../style/landing.scss'
 import Header from './header'
+import { SkillsProps } from './skills'
 
 export interface LandingInterface {
     aboutMe: AboutMeProps
@@ -18,6 +19,7 @@ export interface LandingInterface {
     motto: Motto
     experience: workExperienceProps
     education: educationProps
+    skills: SkillsProps
 }
 
 export interface Motto {

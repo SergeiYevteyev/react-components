@@ -8,6 +8,7 @@ import * as am from './components/aboutme';
 import * as ch from './components/chapter';
 import * as we from './components/workexperience';
 import * as ed from './components/education';
+import * as sk from './components/skills';
 
 function App() {
   const [prettyFace, setPrettyFace] = useState(pf.createInstance('',''))
@@ -79,8 +80,27 @@ function App() {
       .catch((reason: any) => {console.log(reason)});
       }, [])
   
+      const [skills, setSkills] = useState(sk.createBuilder().Build())
+
+      useEffect(
+        function fetchData() {
+        apiGet.getSkills()
+        .then((value: apiGet.skillsResult) => {
+          let builder = sk.createBuilder()
+          
+          value.items.forEach((value: apiGet.skillsItem) => {
+            let skill = sk.createSkill(value.header)
+            value.skills.forEach((value: string) => skill.Add(value))
+            builder.Add(skill.Build())
+          })
+  
+        setSkills(builder.Build())
+        })
+        .catch((reason: any) => {console.log(reason)});
+        }, [])
+
   return (
-    <Landing prettyFace = {prettyFace} aboutMe = {aboutMe} motto = {motto} experience={experience} education={education} />
+    <Landing prettyFace = {prettyFace} aboutMe = {aboutMe} motto = {motto} experience={experience} education={education} skills={skills} />
   );
 }
 
