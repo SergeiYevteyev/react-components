@@ -31,7 +31,7 @@ export function buildChapters() : ChaptersPropsBuilder {
 
 function Chapters(props: ChaptersProps) {
     return (<div>
-        props.Chapter.forEach((value: ChapterProps) => renderChapter(value)))
+        {props.Chapter.map((value: ChapterProps) => renderChapter(value))}
         </div>)
 }
 
