@@ -69,7 +69,7 @@ function render(props: SkillsProps) {
 function renderSkill(props: skill) {
     return (
         <div key={props.key} >            
-            <h3>{props.header}</h3>
+            <h5>{props.header}</h5>
             {props.skills.map((value: string) => (<div key={value}>{value}</div>))}
         </div>
     )
