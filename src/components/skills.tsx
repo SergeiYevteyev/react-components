@@ -7,6 +7,7 @@ export interface SkillsProps {
 interface skill {
     header: string
     skills: string[]
+    key: string
 }
 
 export function createBuilder() : skillsBuilder {
@@ -21,7 +22,7 @@ class skillsBuilder {
     }
 
     Add(skill: skill) {
-        this.skills.push()
+        this.skills.push(skill)
     }
 
     Build() : SkillsProps {
@@ -41,7 +42,8 @@ class skillBuilder {
     constructor(header: string) {
         this.skill = {
             header: header,
-            skills: []
+            skills: [],
+            key: header
         }
     }
 
@@ -55,6 +57,20 @@ class skillBuilder {
 }
 
 export function Skills(props: SkillsProps) {
-    return (<div>'something'</div>)
+    return (render(props))
 }
 
+function render(props: SkillsProps) {    
+    return (<div>            
+        {props.items.map((value: skill) => renderSkill(value))}
+    </div>)
+}
+
+function renderSkill(props: skill) {
+    return (
+        <div key={props.key} >            
+            <h3>{props.header}</h3>
+            {props.skills.map((value: string) => (<div key={value}>{value}</div>))}
+        </div>
+    )
+}
