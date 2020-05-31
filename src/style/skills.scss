@@ -1,0 +1,11 @@
+.skills {   
+    .items {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .item {
+            margin: 0 5px 0 0;
+        }
+    }    
+}

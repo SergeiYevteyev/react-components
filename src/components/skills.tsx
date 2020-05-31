@@ -1,4 +1,5 @@
 import React from 'react'
+import '../style/skills.scss'
 
 export interface SkillsProps {
     items: skill[]
@@ -68,9 +69,11 @@ function render(props: SkillsProps) {
 
 function renderSkill(props: skill) {
     return (
-        <div key={props.key} >            
+        <div className="skills" key={props.key} >            
             <h5>{props.header}</h5>
-            {props.skills.map((value: string) => (<div key={value}>{value}</div>))}
+            <div className="items">
+                {props.skills.map((value: string) => (<div className="item" key={value}>{value}</div>))}
+            </div>
         </div>
     )
 }
