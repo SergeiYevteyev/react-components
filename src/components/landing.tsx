@@ -11,6 +11,7 @@ import WorkExperience, { workExperienceProps } from './workexperience'
 import Education, { educationProps } from './education'
 import '../style/landing.scss'
 import Header from './header'
+import { SkillsProps, Skills } from './skills'
 
 export interface LandingInterface {
     aboutMe: AboutMeProps
@@ -18,6 +19,7 @@ export interface LandingInterface {
     motto: Motto
     experience: workExperienceProps
     education: educationProps
+    skills: SkillsProps
 }
 
 export interface Motto {
@@ -38,6 +40,7 @@ function Landing(props: LandingInterface) {
             <Row className="first-row-margin"></Row>
             {renderAboutMe(props.aboutMe, props.prettyFace)}
             {renderMotto(props.motto)}
+            {renderSkills(props.skills)}
             {renderLineBreak()}
             {renderHeader('Experience')}
             {renderWorkExperience(props.experience)}
@@ -118,6 +121,23 @@ function renderHeader(text: string) {
                 <Header description={text} />
             </Col>
         </Row>
+    )
+}
+
+function renderSkills(skills: SkillsProps) {
+    return (
+        <div>
+            <Row>
+                <Col>
+                    <Chapter header="Skills" text="" />
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <Skills items={skills.items} />
+                </Col>
+            </Row>
+        </div>
     )
 }
 

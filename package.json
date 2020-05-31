@@ -11,12 +11,13 @@
     "@types/react-dom": "^16.9.5",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "react": "^16.12.0",
     "react-app-polyfill": "^1.0.6",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
     "react-scripts": "3.4.0",
+    "surge": "^0.21.3",
     "typescript": "^3.7.5"
   },
   "scripts": {
@@ -27,7 +28,8 @@
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "deploy": "surge --project build --domain sergejsjevtejevs.surge.sh"
   },
   "eslintConfig": {
     "extends": "react-app"

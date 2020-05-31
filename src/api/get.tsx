@@ -152,3 +152,37 @@ export function getEducation() : Promise<educationResult> {
     })
   }); 
 }
+
+export interface skillsResult {
+  items: skillsItem[]
+}
+
+export interface skillsItem {
+  id: string,    
+  header: string,
+  skills: string[]
+}
+
+export function getSkills() : Promise<skillsResult> {
+  return new Promise<skillsResult>((resolve, reject) => {
+      axios.get('/api/skills.json')
+    .then(function (response) {
+      var result: skillsResult
+      result = {items:[]}     
+      response.data.forEach((item: any) => {
+        result.items.push({
+          id: item.id,
+          header: item.header,
+          skills: item.skills
+        })
+      })
+      // handle success        
+      return resolve(result)
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+      return reject(error)
+    })
+  }); 
+}
